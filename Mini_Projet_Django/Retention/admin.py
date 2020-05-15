@@ -1,0 +1,20 @@
+from django.contrib import admin
+from .models import Patient
+# Register your models here.
+
+# création de la ressource d'import export
+from import_export import resources
+class PatientResource(resources.ModelResource):
+    class Meta:
+        model = Patient
+        import_id_fields = ('code_patient',)
+		
+# Intégration simultanée dans l'espace d'administration de django de reversion et import-export
+from import_export.admin import ImportExportModelAdmin
+from reversion.admin import VersionAdmin
+class PatientAdmin(ImportExportModelAdmin,VersionAdmin,admin.ModelAdmin):
+    list_display=('code_patient','nom','prenom','sexe','age','numero1','numero2','date_enrol','observation') # Affichage des champs particulier lors de la modification dans l'espace d'admin (ajout supplementaire de admin.ModelAdmin dans la classe)
+    search_fields=['code_patient','nom','prenom']
+    list_filter=('sexe','date_enrol')
+    resource_class = PatientResource
+admin.site.register(Patient, PatientAdmin)

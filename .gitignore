@@ -1,0 +1,7 @@
+env_mini_projet/
+.vscode/
+__pycache__/
+migrations/
+static/
+db.sqlite3
+
