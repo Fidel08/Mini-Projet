@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    'django_nvd3',
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +45,11 @@ INSTALLED_APPS = [
     'reversion',
     'import_export',
 ]
+
+# Django-3-jet
+JET_DEFAULT_THEME = 'default'
+JET_SIDE_MENU_COMPACT  =  True
+JET_INDEX_DASHBOARD  =  'jet.dashboard.dashboard.DefaultIndexDashboard'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
