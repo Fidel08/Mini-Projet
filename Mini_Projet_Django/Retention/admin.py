@@ -18,7 +18,7 @@ from reversion.admin import VersionAdmin
 class PatientAdmin(ImportExportModelAdmin,VersionAdmin,admin.ModelAdmin):
     list_display=('code_patient','nom','prenom','sexe','age','cohorte_actuelle','numero1','numero2','date_enrol','observation') # Affichage des champs particulier lors de la modification dans l'espace d'admin (ajout supplementaire de admin.ModelAdmin dans la classe)
     search_fields=['code_patient','nom','prenom']
-    list_filter=('sexe','date_enrol',cohorte_actuelleFilter)
+    list_filter=('sexe','date_enrol')
     resource_class = PatientResource
     list_per_page = 15
 admin.site.register(Patient, PatientAdmin)
