@@ -47,7 +47,7 @@ python-memcached==1.59
 python-nvd3==0.14.2
 python-slugify==1.1.4
 pytz==2020.1
-PyYAML==5.3.1
+PyYAML==5.4
 requests==2.23.0
 rsa==4.0
 six==1.14.0
